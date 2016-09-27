@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                    >
+
+    <!--List of the experience able questions-->
+
+    <coll:ArrayList x:Key="TypeDefinition_Questions">
+        <System:String>boolean</System:String>
+        <System:Int32>1</System:Int32>
+        <System:String>char</System:String>
+        <System:Int32>1</System:Int32>
+        <System:String>short</System:String>
+        <System:Int32>2</System:Int32>
+        <System:String>int</System:String>
+        <System:Int32>4</System:Int32>
+        <System:String>long</System:String>
+        <System:Int32>8</System:Int32>
+        <System:String>float</System:String>
+        <System:Int32>4</System:Int32>
+        <System:String>double</System:String>
+        <System:Int32>8</System:Int32>
+        <System:String>byte</System:String>
+        <System:Int32>1</System:Int32>
+    </coll:ArrayList>
+
+</ResourceDictionary>

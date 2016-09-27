@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib"
+                    xmlns:local="clr-namespace:TFG_AIK_OscarJoseAbeldaFernandez.Experiences">
+
+    <!--Name of the Experience Model must be unique-->
+
+    <coll:ArrayList x:Key="ExperiencesList">
+        <local:ExperienceModel 
+            Name="Type Definition" 
+            ImageUri="pack://application:,,,/Content/TypeDefinition_Resources/TypeDefinition-Image.png"
+            Description="You have to allocate memory for some different data, by clicking on the memory cells to change its colour, and click the checkmark when you are done. Try to do all of them on the shortest time possible, but some seconds will be you award if you make a mistake."
+            ExperienceClass="Type Definition"/>
+        <local:ExperienceModel 
+            Name="Type Identification" 
+            ImageUri="pack://application:,,,/Content/TypeIdentification_Resources/TypeIdentification-Image.png"
+            Description="In the center of the screen bubbles with different primitives are going to be falling. You have to grab the bubbles and release it in the right box. Be careful! if you loose a bubble you loose one life, but if you fail you also loose score."
+            ExperienceClass="Type Identification"/>
+        <local:ExperienceModel 
+            Name="Binary Convert" 
+            ImageUri="pack://application:,,,/Content/BinaryConvert_Resources/BinaryConvert-Image.png"
+            Description="Two minutes are left to convert from decimal to binary as much numbers as you could. Press the bits to change its value, and when you think you are right, press the result button, but be aware! if you fail you have a time penalization."
+            ExperienceClass="Binary Convert"/>
+        <local:ExperienceModel 
+            Name="Decimal Convert" 
+            ImageUri="pack://application:,,,/Content/DecimalConvert_Resources/DecimalConvert-Image.png"
+            Description="Two minutes are left to convert from binary to decimal as much numbers as you could. Grab the numbers and release them in the answer rectangle, when all the rectangles are fill you make your answer so be careful about place numbers anyware, oh! and don't forget if you fail the time falls muahahahaha."
+            ExperienceClass="Decimal Convert"/>
+    </coll:ArrayList>
+</ResourceDictionary>

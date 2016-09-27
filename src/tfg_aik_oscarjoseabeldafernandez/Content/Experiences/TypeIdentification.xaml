@@ -1,0 +1,163 @@
+﻿<UserControl x:Class="TFG_AIK_OscarJoseAbeldaFernandez.Content.Experiences.TypeIdentification"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:c="clr-namespace:TFG_AIK_OscarJoseAbeldaFernandez.Controls"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1280"
+             FontFamily="Segoe UI"
+             FontSize="30"
+             >
+    <UserControl.Resources>
+        <Storyboard x:Key="LoadStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="UnloadStoryboard" Completed="OnUnloadedStoryboardCompleted">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard x:Name="OnLoadedStoryboard_BeginStoryboard" Storyboard="{StaticResource LoadStoryboard}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5" Background="#FF126FB0">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Grid Name="DesingGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MaxWidth="250"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" MaxWidth="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Grid.Row="0" Margin="20 20 20 20" MaxHeight="400" MaxWidth="400" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Image Name="Box1" Source="../TypeIdentification_Resources/Box.png" VerticalAlignment="Center" Tag="Integer"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="60" Margin="0 0 0 -20">Integer</TextBlock>
+            </Grid>
+            <Grid Grid.Column="0" Grid.Row="1" Margin="20 20 20 20" MaxHeight="400" MaxWidth="400" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Image Name="Box2" Source="../TypeIdentification_Resources/Box.png" VerticalAlignment="Center" Tag="Float"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="60" Margin="0 0 0 -20">Float</TextBlock>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="0" Margin="20 20 20 20" MaxHeight="400" MaxWidth="400" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Image Name="Box3" Source="../TypeIdentification_Resources/Box.png" VerticalAlignment="Center" Tag="String"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="60" Margin="0 0 0 -20">String</TextBlock>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="1" Margin="20 20 20 20" MaxHeight="400" MaxWidth="400" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Image Name="Box4" Source="../TypeIdentification_Resources/Box.png" VerticalAlignment="Center" Tag="Boolean"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="60" Margin="0 0 0 -20">Boolean</TextBlock>
+            </Grid>
+            <Image Grid.Column="1" Grid.RowSpan="2" Name="SpawnZone" Source="..\TypeIdentification_Resources\motherboard-wide.jpg" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Name="HandPointerGrid">
+            <!-- items for design layout.  They will be replaced at runtime. -->
+            <!--End of desing layount-->
+        </Grid>
+        <Grid Name="LifeGrid" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10 10 10 20">
+            <WrapPanel Name="LifePanel"  MaxHeight="75">
+                <!-- items for design layout.  They will be replaced at runtime. -->
+                <Image Source="../TypeIdentification_Resources/Life.png"/>
+                <Image Source="../TypeIdentification_Resources/Life.png"/>
+                <Image Source="../TypeIdentification_Resources/Life.png"/>
+                <Image Source="../TypeIdentification_Resources/Life.png"/>
+            </WrapPanel>
+        </Grid>
+        <TextBlock Name="ScoreLabel" Text="0000000000" Margin="10 20 10 10" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="100" FontWeight="Bold" FontFamily="Tempus Sans ITC">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFF7502" Offset="0"/>
+                    <GradientStop Color="#FFF5DF00" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <c:PromptMenu x:Name="PromptMenu"/>
+        <c:WelcomeWindow x:Name="WelcomeMenu"/>
+        <Grid Name="ScoreView" Background="{StaticResource OpacityBackgroundBrush}" Visibility="Hidden">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="TransitionStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="FadeIn">
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Duration="0:0:0.5"></DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="FadeOut">
+                        <Storyboard>
+                            <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Duration="0:0:0.5"></DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Hidden</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border BorderThickness="5" BorderBrush="Black" Margin="60 60 60 60" MaxHeight="600" MaxWidth="1000">
+                <Grid Background="{StaticResource BackgroundGradientBrush}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="{DynamicResource Archivements}" Margin="10 5 10 1" FontSize="50"/>
+                    <Border Grid.Row="1" BorderThickness="2" BorderBrush="Black" Margin="10 1 10 1">
+                        <TextBlock Name="ScoreArchivementsText" Text="Operations" TextAlignment="Justify" TextWrapping="Wrap" Foreground="#989898" Margin="10 10 10 0" FontSize="25"/>
+                    </Border>
+                    <TextBlock Grid.Row="2" Text="{DynamicResource FinalScore}" Margin="10 5 10 1"  FontSize="50"/>
+                    <Border Grid.Row="3" BorderThickness="2" BorderBrush="Black" Margin="10 1 10 5">
+                        <TextBlock Name="FinalScoreText" Text="1000000" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#989898" Margin="10 10 10 0" FontWeight="Bold" FontStretch="ExtraExpanded" FontSize="75"/>
+                    </Border>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <k:KinectTileButton Grid.Column="0" Style="{StaticResource PromptMenu_BackToMenu}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="OnScoreView_BackClick" Height="70" Content="{DynamicResource BackToMenu}"/>
+                        <k:KinectTileButton Grid.Column="1" Style="{StaticResource PromptMenu_BackToMenu}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="OnScoreView_ReplayClick" Height="70" Content="{DynamicResource Replay}"/>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

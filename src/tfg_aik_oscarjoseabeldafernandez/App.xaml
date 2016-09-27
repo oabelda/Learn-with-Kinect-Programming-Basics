@@ -1,0 +1,21 @@
+﻿<Application x:Class="TFG_AIK_OscarJoseAbeldaFernandez.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                
+                <ResourceDictionary Source="Styles/Glyph_ArrowStyles.xaml"/>
+                <ResourceDictionary Source="Styles/KinectButtonStyles.xaml" />
+                <ResourceDictionary Source="Styles/Colours.xaml"/>
+
+                <ResourceDictionary Source="Content/MergedExperiencesDictionaries.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

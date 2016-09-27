@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="TFG_AIK_OscarJoseAbeldaFernandez.Controls.WelcomeWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="clr-namespace:TFG_AIK_OscarJoseAbeldaFernandez.Controls"
+             mc:Ignorable="d" 
+             d:Height="250"
+             d:DesignWidth="1000">
+    <Grid>
+        <Grid Name="OverlayGrid" Background="{StaticResource OpacityBackgroundBrush}" Visibility="Hidden">
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="TransitionStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="FadeIn">
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Duration="0:0:0.5"></DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="FadeOut">
+                        <Storyboard>
+                            <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Duration="0:0:0.5"></DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Hidden</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Viewbox MaxHeight="1280" MaxWidth="1024" Margin="60 60 60 60" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid>
+                    <Border BorderThickness="3" BorderBrush="White" Background="{StaticResource BlueBrush}" />
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid Grid.Column="0" Grid.ColumnSpan="2">
+                            <Image Name="Box1" Source="Bocadillo.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"/>
+                            <TextBlock Name="Text" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Margin="0 0 0 -20" TextWrapping="Wrap" MaxWidth="600"/>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Image c:GifImage.AnimatedSource="NinaHablando.gif" />
+                            <TextBlock Grid.Row="1" Text="{DynamicResource ChooseLevel}" Foreground="White" FontSize="20"/>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <k:KinectTileButton   Grid.Column="0" Style="{StaticResource PromptMenu_Resume}"        Click="LevelEasy_Click"      Height="80" Width="150" Content="{DynamicResource Easy}"/>
+                                <k:KinectTileButton   Grid.Column="1" Style="{StaticResource PromptMenu_Resume}"        Click="LevelMedium_Click"    Height="80" Width="150" Content="{DynamicResource Medium}"/>
+                                <k:KinectTileButton   Grid.Column="2" Style="{StaticResource PromptMenu_Resume}"        Click="LevelHard_Click"      Height="80" Width="150" Content="{DynamicResource Hard}"/>
+
+                            </Grid>
+                        </Grid>
+                        
+                    </Grid>
+                    
+                </Grid>
+            </Viewbox>
+        </Grid>
+        
+    </Grid>
+</UserControl>

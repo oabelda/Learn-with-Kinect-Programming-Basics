@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="BlueBrush" Color="#FF00BCF2" />
+    <SolidColorBrush x:Key="MediumGreyBrush" Color="#ff6e6e6e"/>
+    <SolidColorBrush x:Key="KinectPurpleBrush" Color="#FF511C74"/>
+    <SolidColorBrush x:Key="PaleRed" Color="#FFFF8888"/>
+    <SolidColorBrush x:Key="PaleGreen" Color="#FF9EFF88"/>
+    <SolidColorBrush x:Key="OpacityBackgroundBrush" Color="#5A5B5B" Opacity="0.8"/>
+
+    <SolidColorBrush x:Key="EngagedUserMessageBrush" Color="#FF511C74"/>
+    <SolidColorBrush x:Key="TrackedUserMessageBrush" Color="#FF00BCF2"/>
+
+    <Color x:Key="EngagedUserColor" A="#80" R="#51" G="#1C" B="#74"/>
+    <Color x:Key="TrackedUserColor" A="#80" R="#00" G="#BC" B="#F2"/>
+    <Color x:Key="PostEngagementBackgroundUserColor" A="#80" R="#BC" G="#BE" B="#C0"/>
+    <Color x:Key="PreEngagementBackgroundUserColor" A="#80" R="#40" G="#43" B="#46"/>
+
+    <SolidColorBrush x:Key="PostEngagementBackgroundUserBrush" Color="{StaticResource PostEngagementBackgroundUserColor}"/>
+
+    <LinearGradientBrush x:Key="BackgroundGradientBrush" StartPoint="0, 0.5" EndPoint="1, 0.5">
+        <GradientStop Color="#E6E6E6" Offset="0.0" />
+        <GradientStop Color="#FFFFFF" Offset="0.5" />
+        <GradientStop Color="#E6E6E6" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="OrangeGradientBrush" StartPoint="0.5, 0" EndPoint="0.5, 1">
+        <GradientStop Color="#FFF5D5B2" Offset="0.0" />
+        <GradientStop Color="#FFECAD69" Offset="0.328" />
+        <GradientStop Color="#FFE3831D" Offset="1.0" />
+    </LinearGradientBrush>
+
+</ResourceDictionary>

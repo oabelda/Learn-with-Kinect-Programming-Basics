@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="TFG_AIK_OscarJoseAbeldaFernandez.Controls.PromptMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:Height="250"
+             d:DesignWidth="1000">
+
+    <Grid>
+        <k:KinectCircleButton Style="{StaticResource PauseButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Top" Click="ShowMenu_Click" Foreground="{StaticResource OrangeGradientBrush}" ContentForeground="{StaticResource OrangeGradientBrush}" ContentPressedForeground="{StaticResource OrangeGradientBrush}"/>
+        <Grid Name="OverlayGrid" Background="{StaticResource OpacityBackgroundBrush}" Visibility="Hidden">
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="TransitionStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="FadeIn">
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Duration="0:0:0.5"></DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="FadeOut">
+                        <Storyboard>
+                            <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Duration="0:0:0.5"></DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Hidden</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Viewbox MaxHeight="1280" MaxWidth="720" Margin="60 60 60 60" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid>
+                    <Border BorderThickness="3" BorderBrush="White" Background="{StaticResource BlueBrush}" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <k:KinectCircleButton Grid.Column="0" Grid.Row="0" Style="{StaticResource PlayButtonStyle}"         Click="HideMenu_Click"          Height="100" Width="100"/>
+                        <k:KinectCircleButton Grid.Column="0" Grid.Row="2" Style="{StaticResource BackButtonStyle}"         Click="BackToMainMenu_Click"    Height="100" Width="100"/>
+                        <k:KinectCircleButton Grid.Column="0" Grid.Row="1" Style="{StaticResource ReplayButtonStyle}"       Click="Retry_Click"             Height="100" Width="100"/>
+                        <k:KinectTileButton   Grid.Column="1" Grid.Row="0" Style="{StaticResource PromptMenu_Resume}"       Click="HideMenu_Click"          Height="80" Width="300" Margin="10 0 10 0" Content="{DynamicResource ResumeGame}"/>
+                        <k:KinectTileButton   Grid.Column="1" Grid.Row="1" Style="{StaticResource PromptMenu_Restart}"      Click="Retry_Click"             Height="80" Width="300" Margin="10 0 10 0" Content="{DynamicResource RestartGame}"/>
+                        <k:KinectTileButton   Grid.Column="1" Grid.Row="2" Style="{StaticResource PromptMenu_BackToMenu}"   Click="BackToMainMenu_Click"    Height="80" Width="300" Margin="10 0 10 0" Content="{DynamicResource BackToMenu}"/>
+                    </Grid>
+                </Grid>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,176 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:coll="clr-namespace:System.Collections;assembly=mscorlib"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+    <!--List of the experience able questions-->
+    <!--
+    ********* Resource Structure ****
+    <coll:ArrayList> // Each first level collection contains a collection of questions for the same answer 
+        <System:String>Answer</System:String> //Anwer of all the questions
+        <coll:ArrayList> // Each second level collections contains all the questions for this answer
+            Question
+            Question
+            Question
+        </coll:ArrayList>
+    </coll:ArrayList>
+
+
+    ********* Question Model*********
+    ********* Option 1:
+        <coll:ArrayList>
+            <System:String>Question</System:String>
+        </coll:ArrayList>
+    ********* Option 2:
+        <coll:ArrayList>
+            <System:String>Question</System:String>
+            <System:Int32>Width</System:Int32>
+        </coll:ArrayList>
+    ********* Option 3:
+        <coll:ArrayList>
+            <System:String>Question</System:String>
+            <System:Int32>Width</System:Int32>
+            <System:Int32>Height</System:Int32>
+        </coll:ArrayList>
+    -->
+
+    <System:String x:Key="TypeIdentification_Strings_en">It was rumored that the launch of Project Natal would be accompanied with the release of a new dismissed the reports in public and repeatedly emphasized would be fully compatible with all consoles indicated that the company considers it to be a significant initiative as fundamental to brand as and with a launch akin to that of a new console platform Kinect was even referred to as a by at a speech for Executives Club of Chicago When asked if the introduction will extend the time before the next-generation console platform is launched reaffirmed that the company believes that the life cycle of will last through 2015 During Kinect's development project team members experimentally adapted numerous games to Kinect-based control schemes to help evaluate usability Among these games which were demonstrated at in September 2009 According to creative director adding Kinect-based control to pre-existing games would involve significant code alterations making it unlikely for Kinect features to be added through software updates Although the sensor unit was originally planned to contain a microprocessor that would perform operations such as the system's skeletal mapping it was revealed in January 2010 that the sensor would no longer feature a dedicated processor Instead processing would be handled by one of CPU According Kinect system consumes about of computing resources However in November made a statement that the new motion control tech now only uses a single-digit percentage of processing power down from the previously stated 10 to 15 percent A number of observers commented that the computational load required for Kinect makes the addition of Kinect functionality to pre-existing games through software updates even less likely with concepts specific to Kinect more likely to be the focus for developers using the platform</System:String>
+    <System:String x:Key="TypeIdentification_Strings_es">Invirtió veinte años de desarrollo en la tecnología de Kinect de acuerdo con las palabras de Kinect fue anunciado por primera vez el 2 de junio de 2009 en la El nombre en clave responde a la tradición de utilizar ciudades como nombres en clave director de quien incubó el proyecto decidió ponerle el nombre de la ciudad brasileña como un homenaje a su país de origen y porque la palabra natal significa de o en relación al nacimiento lo que refleja la opinión de en el proyecto como el nacimiento de la próxima generación de entretenimiento en el hogar Poco antes de la 2010 varios tropezaron con un anuncio que supuestamente se filtró en el sitio italiano de de que sugirió el título Kinect que confirmó más tarde junto con los detalles de una nueva más delgada sensor de Kinect es una barra horizontal de aproximadamente 23 cm conectada a una pequeña base circular con un eje de articulación de rótula y está diseñado para ser colocado longitudinalmente por encima o por debajo de la pantalla de El dispositivo cuenta con una cámara sensor de profundidad un micrófono de múltiples matrices y un procesador personalizado que ejecuta el software patentado que proporciona captura de movimiento de todo el cuerpo en 3D reconocimiento facial y capacidades de reconocimiento de voz El micrófono de matrices del sensor de Kinect permite a la llevar a cabo la localización de la fuente acústica y la supresión del ruido ambiente permitiendo participar en el chat de sin utilizar auriculares El sensor contiene un mecanismo de inclinación motorizado y en caso de usar un del modelo original tiene que ser conectado a una ya que la corriente que puede proveerle el cable es insuficiente; para el caso del modelo de S esto no es necesario ya que esta consola cuenta con una toma especialmente diseñada para conectar el Kinect y esto permite proporcionar la corriente necesaria que requiere el dispositivo para funcionar sensor de profundidad es un proyector de infrarrojos combinado con un sensor monocromo que permite a Kinect ver la habitación en 3D en cualquier condición de luz ambiental El rango de detección de la profundidad del sensor es ajustable gracias al software de Kinect capaz de calibrar automáticamente el sensor basado en la y en el ambiente físico del jugador tal como la presencia de hardware de Kinect se ha confirmado que se basará en un diseño de referencia y la tecnología 3D-calor fabricados por la compañía israelí de desarrollo 13 de junio de 2010 reveló antes de su muestra en la que el nombre oficial del dispositivo sería 4 de noviembre de 2010 salió a la venta en los Estados Unidos y</System:String>
+    
+    <coll:ArrayList x:Key="TypeIdentification_Questions"> <!-- Collection of collections -->
+        
+        <coll:ArrayList> <!-- First Level Collection -->
+            <System:String>Integer</System:String> <!-- Anwer -->
+            <coll:ArrayList> <!-- Second Level Collection-->
+                <coll:ArrayList> <!-- Third Second Level Collection -->
+                    <System:String>35</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList> <!-- Third Second Level Collection -->
+                    <System:String>0</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>4-1</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>12+16</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>5*2</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>8/4</System:String>
+                </coll:ArrayList>
+            </coll:ArrayList>
+        </coll:ArrayList>
+        
+        <coll:ArrayList>
+            <System:String>Float</System:String>
+            <coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>56.25</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>125.00</System:String>
+                    <System:Int32>200</System:Int32>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>12.1+0.0</System:String>
+                    <System:Int32>200</System:Int32>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>4-3.1</System:String>
+                    <System:Int32>200</System:Int32>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>5.00/2</System:String>
+                    <System:Int32>200</System:Int32>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>8*3.1</System:String>
+                    <System:Int32>200</System:Int32>
+                </coll:ArrayList>
+            </coll:ArrayList>
+        </coll:ArrayList>
+
+        <coll:ArrayList>
+            <System:String>String</System:String>
+            <coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"Text1"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"Text2"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"true"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"false"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"0"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"5,1"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"c"+"3"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"Hola"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"Saludos"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"Texto"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"False"</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"True"</System:String>
+                </coll:ArrayList>
+            </coll:ArrayList>
+        </coll:ArrayList>
+
+        <coll:ArrayList>
+            <System:String>Boolean</System:String>
+            <coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>true</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>false</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>5!=2</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>3&lt;1</System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>7,5&gt;=6,3</System:String>
+                    <System:Int32>200</System:Int32>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>5,0==5</System:String>
+                    <System:Int32>200</System:Int32>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>"hola"&gt;"Hola"</System:String>
+                    <System:Int32>200</System:Int32>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>true&amp;&amp;false </System:String>
+                </coll:ArrayList>
+                <coll:ArrayList>
+                    <System:String>false || false</System:String>
+                    <System:Int32>200</System:Int32>
+                </coll:ArrayList>
+            </coll:ArrayList>
+        </coll:ArrayList>
+
+    </coll:ArrayList>
+
+</ResourceDictionary>
